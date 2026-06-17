@@ -15,13 +15,19 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
   const [downloadState, setDownloadState] = useState<'idle' | 'downloading' | 'completed'>('idle');
   const [copied, setCopied] = useState(false);
 
-  const getCurrentUrl = () => {
-    // Falls back gracefully if running in complex nested sandboxes
-    return window.location.origin || window.location.href;
+  const getPermanentSharedUrl = () => {
+    let url = window.location.origin || window.location.href;
+    
+    // Replace development subdomain prefix with the permanent preview/shared one if it matches AI Studio pattern
+    if (url.includes('ais-dev-')) {
+      url = url.replace('ais-dev-', 'ais-pre-');
+    }
+    // Also strip trailing slashes to keep it super clean
+    return url.replace(/\/+$/, "");
   };
 
   const handleCopyUrl = async () => {
-    const url = getCurrentUrl();
+    const url = getPermanentSharedUrl();
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(url);
@@ -61,7 +67,7 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
    - CapacitorJS (بسطر أوامر بسيط: npx cap add android)
    - Cordova / PhoneGap
 
-رابط المنصة المباشر للتشغيل الفوري: ${getCurrentUrl()}
+رابط المنصة المباشر للتشغيل الفوري: ${getPermanentSharedUrl()}
 =========================================
 `;
       const blob = new Blob([instructions], { type: "text/plain;charset=utf-8" });
@@ -78,7 +84,7 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
 
   if (!isOpen) return null;
 
-  const appUrl = getCurrentUrl();
+  const appUrl = getPermanentSharedUrl();
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&color=1e50ba&bgcolor=ffffff&qzone=1&data=${encodeURIComponent(appUrl)}`;
 
   return (

@@ -436,7 +436,7 @@ export default function App() {
 
           </div>
 
-          {/* APK Android App Promotion Banner */}
+          {/* Permanent URL Promotion Banner */}
           <div 
             onClick={() => setApkModalOpen(true)}
             className="group relative bg-gradient-to-l from-blue-950/20 via-stone-900 to-stone-900 border border-blue-900/45 hover:border-amber-500/40 rounded-3xl p-5 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-5 max-w-5xl mx-auto shadow-xl hover:shadow-[#1E50BA]/5 cursor-pointer transition-all hover:scale-[1.01]"
@@ -450,17 +450,17 @@ export default function App() {
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-2 justify-center sm:justify-start">
-                  <span className="text-[9px] font-black text-amber-500 uppercase tracking-widest px-2 py-0.5 rounded-full bg-amber-950/40 border border-amber-900/30">تطبيق الأندرويد متوفر الآن</span>
+                  <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest px-2 py-0.5 rounded-full bg-blue-950/40 border border-blue-900/30">الرابط الدائم للمنصة 24/7</span>
                   <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                 </div>
-                <h4 className="text-sm font-black text-white group-hover:text-blue-400 transition-colors">هل تبحث عن سرعة أكبر؟ ثبّت تطبيق الهاتف APK</h4>
-                <p className="text-[11px] text-stone-400">تصفح وجباتك المفضلة، اطلب كزائر أو سائق، وتابع التوصيل في الوقت الفعلي ومباشرة من جوالك.</p>
+                <h4 className="text-sm font-black text-white group-hover:text-blue-400 transition-colors">مشاركة وتشغيل المنصة على المتصفح بشكل دائم</h4>
+                <p className="text-[11px] text-stone-400">احصل على الرابط الدائم والفعال لفتح واستخدام المنصة على الهواتف ومتصفح جوجل دون قيود وبسهولة مطلقة.</p>
               </div>
             </div>
 
             <div className="flex items-center gap-2 bg-[#E96C20] text-stone-950 font-black text-xs px-4 py-2.5 rounded-xl shadow group-hover:bg-amber-500 group-hover:scale-103 active:scale-97 transition-all shrink-0">
-              <ArrowDownToLine className="w-4 h-4" />
-              <span>تنزيل APK مجاناً</span>
+              <Sparkles className="w-4 h-4" />
+              <span>مشاركة ورابط التشغيل</span>
             </div>
           </div>
 

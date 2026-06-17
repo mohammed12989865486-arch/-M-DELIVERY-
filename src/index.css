@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-50: #fdfaf2;
+  --color-brand-100: #fbeee0;
+  --color-brand-200: #f5d4bf;
+  --color-brand-500: #d97706; /* Amber-600 like or gold */
+  --color-brand-600: #b45309;
+  --color-brand-700: #78350f;
+  --color-brand-800: #451a03;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Print Invoice styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice, #printable-invoice * {
+    visibility: visible;
+  }
+  #printable-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    box-shadow: none;
+    padding: 20px;
+    direction: rtl;
+  }
+}
+
+/* Custom scrollbars for custom menu list */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e7e5e4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d6d3d1;
+}

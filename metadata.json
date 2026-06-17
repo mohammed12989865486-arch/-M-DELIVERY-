@@ -1,0 +1,6 @@
+{
+  "name": "M shop",
+  "description": "تطبيق قائمة طعام تفاعلية للمطاعم يتيح اختيار الوجبات وإصدار الفاتورة وتفصيل الحساب بشكل فوري وأنيق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
